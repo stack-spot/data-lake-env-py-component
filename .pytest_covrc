@@ -1,0 +1,7 @@
+[run]
+omit = plugin/usecase/datalake/files/*
+
+[report]
+show_missing = True
+skip_empty = True
+sort = -Cover

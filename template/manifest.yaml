@@ -1,0 +1,4 @@
+datalake:
+  # Data Lake name, required
+  name: <datalake_name>
+  region: us-east-1

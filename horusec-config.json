@@ -1,0 +1,24 @@
+{
+  "horusecCliEnableCommitAuthor": true,
+  "horusecCliEnableInformationSeverity": true,
+  "horusecCliEnableOwaspDependencyCheck": true,
+  "horusecCliFalsePositiveHashes": [
+    "57d822ca1c2e7aa1a4f3f465fde9198ebb8221fb42d4b9230d59a4ced6a027b1",
+    "925883ef3ad5df196139b1b9f8ed00b793cd204ef0a81d54960ef27faa25ce55",
+    "e5ae95bc023c5824023a7c8e8040876086758d029f874cf58e02d6b5f80f1c7d"
+  ],
+  "horusecCliFilesOrPathsToIgnore": [
+    "**/.tox/**",
+    "**/.vscode/**",
+    "**/*.env",
+    "**/.mypy_cache/**",
+    "**/tests/**",
+    "**/venv/**"
+  ],
+  "horusecCliReturnErrorIfFoundVulnerability": true,
+  "horusecCliToolsConfig": {
+    "Bandit": {
+      "istoignore": true
+    }
+  }
+}
