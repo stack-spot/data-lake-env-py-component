@@ -43,7 +43,7 @@ docker build -t datalake-component:latest .
 ```
 docker run \
 -v $PWD/template:/src/template \
--v ~/.aws:/home/orange/.aws \
+-v ~/.aws:/home/stk/.aws \
 -i datalake-component:latest \
 create datalake -f /src/template/manifest.yaml
 ```

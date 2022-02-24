@@ -29,7 +29,7 @@ class CDKEngine():
         stack_template = self.app.synth().get_stack_artifact(stack_name).template
         cf = get_client_cloudformation(region)
         try:
-            stack_name = f"orangedata-{stack_name}"
+            stack_name = f"stackspot-skynet-{stack_name}"
             # print(json.dumps(stack_template, indent=2))
             create_stack(cf, stack_name, stack_template)
         except ClientError as e:
