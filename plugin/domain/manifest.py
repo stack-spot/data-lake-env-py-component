@@ -17,6 +17,12 @@ class DataLake:
         if self.name is None or len(self.name) > 25:
             raise ValueError(
                 "'name' must be non empty string less than 25 characters.")
+        
+        special_characters = '"!@#$%^&*()-+?=,<>/'
+
+        if any(c in special_characters for c in self.name):
+            raise ValueError(
+                'Datalake name must not contains any of these characters: "!@#$%^&*()-+?=,<>/')
 
 
 @dataclass

@@ -21,8 +21,10 @@ class S3Resource(S3ResourceInterface):
 
     def check_buckets(self, account: str, datalake: DataLake) -> dict:
 
-        clean_bucket_name = f"{account}-clean-{datalake.name}"
-        raw_bucket_name = f"{account}-raw-{datalake.name}"
+        datalake_name = datalake.name.replace('_', '-')
+
+        clean_bucket_name = f"{account}-clean-{datalake_name}"
+        raw_bucket_name = f"{account}-raw-{datalake_name}"
 
         try:
             res = self.s3.list_buckets()

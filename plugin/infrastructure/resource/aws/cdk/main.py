@@ -21,15 +21,17 @@ class AwsCdk(CDKEngine, DataLakeCloudInterface):
         if bucket["raw"] != "":
             stack.create_bucket(bucket["raw"])
         else:
-            logger.info("bucket %s-raw-%s already exists.", account_id, datalake.name)
+            logger.info("bucket %s-raw-%s already exists.",
+                        account_id, datalake.name.replace('_', '-'))
 
         if bucket["clean"] != "":
             stack.create_bucket(bucket["clean"], versioned=True)
         else:
-            logger.info("bucket %s-clean-%s already exists.", account_id, datalake.name)
-        stack.register_repositories(account_id, datalake.name)
-        stack.create_classifications(cloud_service, datalake.region)
+            logger.info("bucket %s-raw-%s already exists.",
+                        account_id, datalake.name.replace('_', '-'))
+
+        # Disabling Taxonomy temporarily
+        #stack.register_repositories(account_id, datalake.name.replace('_', '-'))
+        #stack.create_classifications(cloud_service, datalake.region)
         if bucket["name"] != "":
             self.deploy(stack_name, datalake.region)
-
-    
